@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.wizeline.academy.animations.R
 import com.wizeline.academy.animations.databinding.DetailFragmentBinding
 import com.wizeline.academy.animations.utils.loadImage
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
@@ -29,13 +30,19 @@ class DetailFragment : Fragment() {
         _binding = DetailFragmentBinding.inflate(layoutInflater, container, false)
         binding.btnMoreDetails.setOnClickListener { goToMoreDetails() }
         binding.ivImageDetail.loadImage(args.imageId)
+
         return binding.root
     }
 
     private fun goToMoreDetails() {
+        val extras = FragmentNavigatorExtras(
+            binding.ivImageDetail to getString(R.string.shared_image),
+            binding.tvTitle to getString(R.string.shared_title),
+            binding.tvSubtitle to getString(R.string.shared_description)
+        )
         val directions =
             DetailFragmentDirections.toMoreDetailsFragment(args.imageId, viewModel.contentIndex)
-        findNavController().navigate(directions)
+        findNavController().navigate(directions, extras)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

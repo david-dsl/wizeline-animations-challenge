@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AnimationsDemoWizelineAcademy</string>
+
+<!--    Shared transitions elements-->
+    <string name="shared_image">shared_image</string>
+    <string name="shared_title">shared_title</string>
+    <string name="shared_description">shared_description</string>
+
 </resources>

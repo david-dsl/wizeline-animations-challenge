@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import androidx.transition.TransitionInflater
 import com.wizeline.academy.animations.databinding.MoreDetailsFragmentBinding
 import com.wizeline.academy.animations.utils.loadImage
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,6 +27,8 @@ class MoreDetailsFragment : Fragment() {
     ): View {
         _binding = MoreDetailsFragmentBinding.inflate(inflater, container, false)
         binding.ivImageDetailLarge.loadImage(args.imageId)
+        sharedElementEnterTransition = TransitionInflater.from(requireContext())
+            .inflateTransition(android.R.transition.move)
         return binding.root
     }
 
