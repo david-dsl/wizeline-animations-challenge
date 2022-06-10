@@ -7,10 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <View
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/view"
         android:layout_width="@dimen/home_lottie_width"
         android:layout_height="@dimen/home_lottie_height"
+        app:lottie_url="https://assets9.lottiefiles.com/private_files/lf30_zcdudxce.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
