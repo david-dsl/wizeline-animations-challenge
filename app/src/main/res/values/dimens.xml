@@ -32,5 +32,6 @@
     <dimen name="splash_img_width">0dp</dimen>
     <dimen name="splash_img_height">0dp</dimen>
     <!-- fragment transitions-->
-    <integer name="transition_duration">750</integer>
+    <integer name="slow_transition_duration">750</integer>
+    <integer name="fast_transition_duration">150</integer>
 </resources>

@@ -16,7 +16,7 @@
             app:enterAnim="@anim/enter_from_right"
             app:exitAnim="@anim/exit_to_left"
             app:popEnterAnim="@anim/enter_from_left"
-            app:popExitAnim="@anim/exit_to_right" />
+            app:popExitAnim="@anim/exit_to_right"/>
     </fragment>
 
     <fragment
@@ -26,7 +26,11 @@
         tools:layout="@layout/home_fragment">
         <action
             android:id="@+id/toDetailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/expand"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/shrink" />
     </fragment>
 
     <fragment
